@@ -1,0 +1,4 @@
+# Exclude dev-only files from Vercel deployments
+AGENTS.md
+CLAUDE.md
+.env.example

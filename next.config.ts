@@ -1,7 +1,12 @@
-import type { NextConfig } from "next";
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  // Output as standalone for containerized deploys (Docker, AWS ECS, etc.)
+  // Remove or comment out if deploying to Vercel/Netlify.
+  output: process.env.STANDALONE === "true" ? "standalone" : undefined,
 
-export default nextConfig;
+  // Disable x-powered-by header for security
+  poweredByHeader: false,
+}
+
+export default nextConfig
